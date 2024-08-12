@@ -57,8 +57,9 @@ export async function POST(
         access_token: resp.data.access_token,
       });
 
+      const updatedUser = await userRef.get();
       // Return the updated user data
-      return NextResponse.json(singleUser.data());
+      return NextResponse.json(updatedUser.data());
     } else {
       // Save the new user with its page ID, user ID, and access token
       await userRef.set({
