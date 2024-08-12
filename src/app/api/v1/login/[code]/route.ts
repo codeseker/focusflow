@@ -7,7 +7,6 @@ export async function POST(
   { params }: { params: { code: string } }
 ) {
   try {
-    console.log("hello I am from extension");
     const { code } = params;
 
     // Make sure the code parameter is available
